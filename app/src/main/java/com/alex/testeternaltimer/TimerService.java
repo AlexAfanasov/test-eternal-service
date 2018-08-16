@@ -1,4 +1,4 @@
-package oak.shef.ac.uk.testrunningservicesbackgroundrelaunched;
+package com.alex.testeternaltimer;
 
 import android.app.Service;
 import android.content.Context;
@@ -29,9 +29,7 @@ public class TimerService extends Service {
         super.onStartCommand(intent, flags, startId);
         startTimer();
         String message = "RunAfterBootService onStartCommand() method.";
-
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
-
         Log.d("TEST", "RunAfterBootService onStartCommand() method.");
         return START_STICKY;
     }
@@ -40,23 +38,20 @@ public class TimerService extends Service {
     public void onDestroy() {
         super.onDestroy();
         Log.i("EXIT", "ondestroy!");
-        Intent broadcastIntent = new Intent("uk.ac.shef.oak.ActivityRecognition.RestartSensor");
+        Intent broadcastIntent = new Intent("com.alex.ActivityRecognition.RestartSensor");
         sendBroadcast(broadcastIntent);
         stoptimertask();
     }
 
     private Timer timer;
     private TimerTask timerTask;
-    long oldTime=0;
     public void startTimer() {
         //set a new Timer
         timer = new Timer();
-
         //initialize the TimerTask's job
         initializeTimerTask();
-
         //schedule the timer, to wake up every 1 second
-        timer.schedule(timerTask, 1000, 1000); //
+        timer.schedule(timerTask, 1000, 1000);
     }
 
     /**

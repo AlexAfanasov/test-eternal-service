@@ -1,4 +1,4 @@
-package oak.shef.ac.uk.testrunningservicesbackgroundrelaunched;
+package com.alex.testeternaltimer;
 
 import org.junit.Test;
 
