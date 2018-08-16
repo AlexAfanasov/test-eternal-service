@@ -21,7 +21,7 @@ public class TimerRestarterBroadcastReceiver extends BroadcastReceiver {
         Toast.makeText(context, message, Toast.LENGTH_LONG).show();
         Log.d(TAG_BOOT_BROADCAST_RECEIVER, action);
 
-        Log.i(TimerRestarterBroadcastReceiver.class.getSimpleName(), "Service Stops! Oooooooooooooppppssssss!!!!");
+        Log.i(TimerRestarterBroadcastReceiver.class.getSimpleName(), "Service Stops! Ohh, nooooo!!!!");
         context.startService(new Intent(context, TimerService.class));
     }
 

@@ -11,9 +11,6 @@ import android.widget.Toast;
 import java.util.Timer;
 import java.util.TimerTask;
 
-/**
- * Created by fabio on 30/01/2016.
- */
 public class TimerService extends Service {
     public int counter=0;
     public TimerService(Context applicationContext) {
@@ -33,7 +30,9 @@ public class TimerService extends Service {
         Log.d("TEST", "RunAfterBootService onStartCommand() method.");
         return START_STICKY;
     }
-
+    /**
+     * restarting on destroy
+     */
     @Override
     public void onDestroy() {
         super.onDestroy();
